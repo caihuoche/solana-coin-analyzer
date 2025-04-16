@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 定义日志文件路径 -->
+    <property name="FILE_NAME_DATE_PATTERN" value="yyyy-MM-dd"/>
+    <property name="LOGS_FOLDER" value="${LOGS_FOLDER:-logs}"/>
+    <property name="LOG_FILE_INFO" value="${LOGS_FOLDER}/info.log"/>
+    <property name="LOG_FILE_WARN" value="${LOGS_FOLDER}/warn.log"/>
+    <property name="LOG_FILE_ERROR" value="${LOGS_FOLDER}/error.log"/>
+
+    <!-- 引入 Spring Boot 默认配置 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <!-- WARN 级别日志输出到文件 -->
+
+    <!-- WARN 级别日志输出到文件 -->
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_INFO}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_INFO}.%d{${FILE_NAME_DATE_PATTERN:-yyyy-MM-dd-HH}}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- WARN 级别日志输出到文件 -->
+    <appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_WARN}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_WARN}.%d{${FILE_NAME_DATE_PATTERN:-yyyy-MM-dd-HH}}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+
+    <!-- ERROR 级别日志输出到文件 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_ERROR}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_ERROR}.%d{${FILE_NAME_DATE_PATTERN:-yyyy-MM-dd-HH}}.log</fileNamePattern>
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!-- 异步 appender 配置 -->
+    <appender name="ASYNC_INFO_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="INFO_FILE"/>
+        <queueSize>2000</queueSize> <!-- 可选：队列大小 -->
+        <discardingThreshold>0</discardingThreshold> <!-- 可选：丢弃阈值 -->
+        <includeCallerData>false</includeCallerData> <!-- 可选：是否包含调用者数据 -->
+    </appender>
+    <!-- 异步 appender 配置 -->
+    <appender name="ASYNC_WARN_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="WARN_FILE"/>
+        <queueSize>2000</queueSize> <!-- 可选：队列大小 -->
+        <discardingThreshold>0</discardingThreshold> <!-- 可选：丢弃阈值 -->
+        <includeCallerData>false</includeCallerData> <!-- 可选：是否包含调用者数据 -->
+    </appender>
+
+    <appender name="ASYNC_ERROR_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ERROR_FILE"/>
+        <queueSize>2000</queueSize> <!-- 可选：队列大小 -->
+        <discardingThreshold>0</discardingThreshold> <!-- 可选：丢弃阈值 -->
+        <includeCallerData>false</includeCallerData> <!-- 可选：是否包含调用者数据 -->
+    </appender>
+
+
+    <!-- 定义 TokenStatsJob 类的日志文件路径 -->
+    <property name="LOG_FILE_TOKEN_STATS_JOB" value="${LOGS_FOLDER}/token-stats-job.log"/>
+
+    <!-- TokenStatsJob 类的日志输出到文件 -->
+    <appender name="TOKEN_STATS_JOB_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE_TOKEN_STATS_JOB}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_TOKEN_STATS_JOB}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 异步 appender 配置 -->
+    <appender name="ASYNC_TOKEN_STATS_JOB_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="TOKEN_STATS_JOB_FILE"/>
+        <queueSize>2000</queueSize> <!-- 可选：队列大小 -->
+        <discardingThreshold>0</discardingThreshold> <!-- 可选：丢弃阈值 -->
+        <includeCallerData>false</includeCallerData> <!-- 可选：是否包含调用者数据 -->
+    </appender>
+
+
+    <!-- 根日志配置 -->
+    <root level="INFO">
+        <!-- 将 INFO 及以上级别日志输出到控制台 -->
+        <appender-ref ref="CONSOLE"/>
+        <!-- 将 WARN 级别日志异步写入文件 -->
+        <appender-ref ref="ASYNC_INFO_FILE"/>
+        <!-- 将 WARN 级别日志异步写入文件 -->
+        <appender-ref ref="ASYNC_WARN_FILE"/>
+        <!-- 将 ERROR 级别日志异步写入文件 -->
+        <appender-ref ref="ASYNC_ERROR_FILE"/>
+    </root>
+
+    <!-- 为 tokenStats Logger 配置 -->
+    <logger name="tokenStats" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC_TOKEN_STATS_JOB_FILE"/>
+        <appender-ref ref="CONSOLE"/>
+
+    </logger>
+
+
+</configuration>

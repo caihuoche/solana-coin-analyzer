@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creda.coin.price.mapper.TokenProfitHistoryMapper">
+    <select id="getAccountsTokenProfitsAtTime" resultType="TokenProfitHistory">
+        <![CDATA[
+        SELECT t.*
+        FROM token_profit_history t
+        JOIN (
+            SELECT account, token_address, MAX(block_time) AS max_block_time
+            FROM token_profit_history
+            WHERE block_time <= #{time}
+              AND account IN
+        ]]>
+        <foreach item="account" collection="accounts" open="(" separator="," close=")">
+            #{account}
+        </foreach>
+        <![CDATA[
+            GROUP BY account, token_address
+        ) latest ON t.account = latest.account
+        AND t.token_address = latest.token_address
+        AND t.block_time = latest.max_block_time
+    ]]>
+    </select>
+</mapper>

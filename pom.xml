@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.7</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.creda</groupId>
+    <artifactId>solana-coin-analyzer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>solana-coin-price</name>
+    <description>Demo project for Spring Boot</description>
+    <url />
+    <licenses>
+        <license />
+    </licenses>
+    <developers>
+        <developer />
+    </developers>
+    <scm>
+        <connection />
+        <developerConnection />
+        <tag />
+        <url />
+    </scm>
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+    <dependencies>
+        <!--     <dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-logback</artifactId>
+            <version>6.28.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-spring-boot-starter</artifactId>
+            <version>6.28.0</version>
+        </dependency>
+-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- OkHttp dependency -->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version> <!-- 使用合适的版本 -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.13</version> <!-- 使用合适的版本 -->
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <!--  <dependency>
+              <groupId>com.clickhouse</groupId>
+              <artifactId>clickhouse-spring-boot-starter</artifactId>
+              <version>1.1.2</version> &lt;!&ndash; 请根据需要选择最新版本 &ndash;&gt;
+          </dependency>
+  -->
+        <dependency>
+            <groupId>cc.blynk.clickhouse</groupId>
+            <artifactId>clickhouse4j</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+        <!--  <dependency>
+                        <groupId>ru.yandex.clickhouse</groupId>
+                        <artifactId>clickhouse-jdbc</artifactId>
+                        <version>0.3.1</version>
+                    </dependency>-->
+
+        <dependency>
+            <groupId>org.bitcoinj</groupId>
+            <artifactId>bitcoinj-core</artifactId>
+            <version>0.15.10</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>com.github.mironov-borsh</groupId>
+            <artifactId>borshj</artifactId>
+            <version>0.1.0</version>
+        </dependency>-->
+
+        <!--  <dependency>
+            <groupId>com.github.near</groupId>
+            <artifactId>borshj</artifactId>
+            <version>ae37b1bd00</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.7</version> <!-- 版本可以根据需要调整 -->
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <version>3.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>elasticsearch-rest-client</artifactId>
+                    <groupId>org.elasticsearch.client</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--  <dependency>
+          <groupId>org.elasticsearch.client</groupId>
+          <artifactId>elasticsearch-rest-high-level-client</artifactId>
+          <version>8.14.0</version>
+      </dependency>-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>8.14.3</version> <!-- 使用与 Elasticsearch 8.14.x 兼容的版本 -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.davidfantasy</groupId>
+            <artifactId>mybatis-plus-generator-ui</artifactId>
+            <version>2.0.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>4.8.7</version> <!-- 这里根据最新版本调整 -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version> <!-- 这里根据你需要的具体版本进行调整 -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version> <!-- 这里根据你需要的具体版本进行调整 -->
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.osslabz.evm</groupId>
+            <artifactId>evm-abi-decoder</artifactId>
+            <version>0.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.syntifi.near</groupId>
+            <artifactId>borshj</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--  <plugin>
+                <groupId>io.sentry</groupId>
+                <artifactId>sentry-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    &lt;!&ndash; for showing output of sentry-cli &ndash;&gt;
+                    <debugSentryCli>true</debugSentryCli>
+
+                    <org>parad0x</org>
+
+                    <project>sol-coin-analyzer</project>
+
+                    &lt;!&ndash; in case you're self hosting, provide the URL here &ndash;&gt;
+                    &lt;!&ndash;<url>http://localhost:8000/</url>&ndash;&gt;
+
+                    &lt;!&ndash; provide your auth token via SENTRY_AUTH_TOKEN environment variable &ndash;&gt;
+            <authToken>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</authToken>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            &lt;!&ndash;
+                            Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
+                            This enables source context, allowing you to see your source
+                            code as part of your stack traces in Sentry.
+                            &ndash;&gt;
+                            <goal>uploadSourceBundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+    </build>
+
+</project>

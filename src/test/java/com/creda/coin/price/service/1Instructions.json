@@ -1,0 +1,127 @@
+[
+    {
+        "parsed": {
+            "info": {
+                "account": "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1",
+                "mint": "So11111111111111111111111111111111111111112",
+                "source": "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB",
+                "systemProgram": "11111111111111111111111111111111",
+                "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                "wallet": "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB"
+            },
+            "type": "create"
+        },
+        "program": "spl-associated-token-account",
+        "programId": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+    },
+    {
+        "parsed": {
+            "info": {
+                "extensionTypes": [
+                    "immutableOwner"
+                ],
+                "mint": "So111111111111111@Document(indexName = \"solana_token_swap_price_history\")\n11111111111111111111111112"
+            },
+            "type": "getAccountDataSize"
+        },
+        "program": "spl-token",
+        "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    },
+    {
+        "parsed": {
+            "info": {
+                "lamports": 2039280,
+                "newAccount": "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1",
+                "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+                "source": "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB",
+                "space": 165
+            },
+            "type": "createAccount"
+        },
+        "program": "system",
+        "programId": "11111111111111111111111111111111"
+    },
+    {
+        "parsed": {
+            "info": {
+                "account": "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1"
+            },
+            "type": "initializeImmutableOwner"
+        },
+        "program": "spl-token",
+        "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    },
+    {
+        "parsed": {
+            "info": {
+                "account": "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1",
+                "mint": "So11111111111111111111111111111111111111112",
+                "owner": "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB"
+            },
+            "type": "initializeAccount3"
+        },
+        "program": "spl-token",
+        "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    },
+    {
+        "accounts": [
+            "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB",
+            "A1BBtTYJd4i3xU8D6Tc2FzU6ZN4oXZWXKZnCxwbHXr8x",
+            "5cyXP6XWLNzD7H2mcLiA6h69tiyGjPtHEDaxJUVAwimE",
+            "9Gp9sPNuF6VnHRo1Hv5ACm2YtdQD33BUVpQe3Y2uWa5i",
+            "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1",
+            "3QMzwucK9HZFShkV3VLqqxTeQo9h5Gf6V5Fqm6uhWepw",
+            "2hybwRRQitDHZRGer8kVFv4PxvHCMyyVK2ZLLR1PxX5h",
+            "5xVtmENR7FuP9NdLeTj4t9N8PhL6UqRPyLtVhWr7d5bs",
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+            "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+            "6f8deE148nynnSiWshA9vLydEbJGpDeKh5G4PRgjmzG7",
+            "So11111111111111111111111111111111111111112",
+            "9ESMeb9wDQxSMRDuUD1MwGAXfSBWt2kK4FMQEC3b4Wxk",
+            "GJdVb8WUkHeWZkDQM96sxYyfMx9Pk1RA6ddF4MaSNhDG",
+            "AEdJHeZgQK8tMqe3vMvN2qHsYcKLohHHEGGnBWiVzsuG",
+            "7buXRTJKm5VS8P8axomMnLXPaNvX7iQDTRdgpY6gvNwq"
+        ],
+        "data": "ASCsAbe1UnDmmyJ2qSJev3Y3KnRh5kPSw6gN63UKje9otfcWLZnupEgY",
+        "programId": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK"
+    },
+    {
+        "parsed": {
+            "info": {
+                "authority": "4oc7Vtg6uZhQrfmpQcEb3UeucH6uG2GzdWUHpiZBCcnB",
+                "destination": "3QMzwucK9HZFShkV3VLqqxTeQo9h5Gf6V5Fqm6uhWepw",
+                "mint": "6f8deE148nynnSiWshA9vLydEbJGpDeKh5G4PRgjmzG7",
+                "source": "9Gp9sPNuF6VnHRo1Hv5ACm2YtdQD33BUVpQe3Y2uWa5i",
+                "tokenAmount": {
+                    "amount": "5000000000000",
+                    "decimals": 6,
+                    "uiAmount": 5000000.0,
+                    "uiAmountString": "5000000"
+                }
+            },
+            "type": "transferChecked"
+        },
+        "program": "spl-token",
+        "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    },
+    {
+        "parsed": {
+            "info": {
+                "authority": "5cyXP6XWLNzD7H2mcLiA6h69tiyGjPtHEDaxJUVAwimE",
+                "destination": "7tBZ1qg7nCw2RuhMdy1xE72Nzoem8ggZJJLKPrSx6wz1",
+                "mint": "So11111111111111111111111111111111111111112",
+                "source": "2hybwRRQitDHZRGer8kVFv4PxvHCMyyVK2ZLLR1PxX5h",
+                "tokenAmount": {
+                    "amount": "159039553",
+                    "decimals": 9,
+                    "uiAmount": 0.159039553,
+                    "uiAmountString": "0.159039553"
+                }
+            },
+            "type": "transferChecked"
+        },
+        "program": "spl-token",
+        "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    }
+]

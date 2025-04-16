@@ -1,0 +1,6 @@
+<configuration>
+    <!-- 设置日志级别为 NONE 以禁用 SQL 语句日志输出 -->
+    <settings>
+        <setting name="logImpl" value="NONE"/>
+    </settings>
+</configuration>
